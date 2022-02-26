@@ -18,7 +18,7 @@ public class ExplicitWait {
     @BeforeMethod
     public void setupMethod() {
         driver = WebDriverfactory.getDriver("chrome");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
     }
 
     @AfterMethod

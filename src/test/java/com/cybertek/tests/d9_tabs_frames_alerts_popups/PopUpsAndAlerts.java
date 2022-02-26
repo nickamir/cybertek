@@ -24,7 +24,7 @@ public class PopUpsAndAlerts {
     }
     @Test
         public void htmlPopup() {
-            driver.get("thhps://www.primefaces.org/showcase/ui/overlay/confirmDialog.xhtml");
+            driver.get("https://www.primefaces.org/showcase/ui/overlay/confirmDialog.xhtml");
             //bring pop up
             driver.findElement(By.xpath("//span[.='Destroy the World']"));
             //click no on the pop up
