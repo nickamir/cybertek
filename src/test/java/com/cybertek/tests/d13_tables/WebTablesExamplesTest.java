@@ -1,5 +1,6 @@
 package com.cybertek.tests.d13_tables;
 
+import com.cybertek.tests.TestBase;
 import com.cybertek.utilitties.WebDriverfactory;
 
 import org.openqa.selenium.By;
@@ -12,22 +13,13 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class WebTablesExamplesTest {
-    WebDriver driver;
-    @BeforeMethod
-    public void setupMethod() {
-        driver = WebDriverfactory.getDriver("chrome");
-        driver.get("http://practice.cybertekschool.com/tables");
-    }
+public class WebTablesExamplesTest extends TestBase {
 
-    @AfterMethod
-    public void teardownMethod() throws InterruptedException {
-        Thread.sleep(3000);
-        driver.quit();
-}
+
 
     @Test
     public void printTable(){
+        driver.get("http://practice.cybertekschool.com/tables");
         WebElement mytable  = driver.findElement(By.id("table1"));
         System.out.println(mytable.getText());
 
