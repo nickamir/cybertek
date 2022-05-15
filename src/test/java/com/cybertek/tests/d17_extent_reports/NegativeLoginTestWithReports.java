@@ -37,5 +37,7 @@ public class NegativeLoginTestWithReports extends TestBase {
         extentLogger.info("verify page url");
         Assert.assertEquals(driver.getCurrentUrl(), "https://google.com/");
         extentLogger.pass("PASS: wrong password test");
+
+
     }
 }
