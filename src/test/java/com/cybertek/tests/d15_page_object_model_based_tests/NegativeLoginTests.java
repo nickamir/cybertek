@@ -26,7 +26,7 @@ public class NegativeLoginTests extends TestBase {
 
         LoginPage loginpage = new LoginPage();
         loginpage.userName.sendKeys("outta");
-        loginpage.password.sendKeys("uknowwhero");
+        loginpage.password.sendKeys("uknowwhere");
         loginpage.submit.click();
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://qa3.vytrack.com/user/login");

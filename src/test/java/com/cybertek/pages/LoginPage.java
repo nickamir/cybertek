@@ -3,6 +3,7 @@ package com.cybertek.pages;
 import com.cybertek.utilitties.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
@@ -15,7 +16,9 @@ public class LoginPage {
     @FindBy(id="prependedInput")
     public WebElement userName;
 
-    @FindBy(id="prependedInput2")
+    @FindBys({
+    @FindBy(name="prependedInput2"),
+    @FindBy(id="prependedInput2")})// if for example the id or the name  of the object keeps on changing we can use @FindBys to find object by either way.
     public WebElement password;
 
     //driver.findElement(By.name("_submit")

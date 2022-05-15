@@ -37,7 +37,7 @@ public class HoverTest {
              String xpath = "//h5[.='name:user"+ (i+1)+"']";
             System.out.println(xpath);
             ////h5[.='name:user1']
-            ////h5[.='name:user2']  --> finding usernames and vetifying all the img
+            ////h5[.='name:user2']  --> finding usernames and verifying all the img
             ////h5[.='name:user3']
              WebElement text = driver.findElement(By.xpath(xpath));
             System.out.println("Verify element" + i);;
