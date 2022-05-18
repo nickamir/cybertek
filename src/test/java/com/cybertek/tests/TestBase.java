@@ -9,10 +9,7 @@ import com.cybertek.utilitties.WebDriverfactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -49,7 +46,16 @@ public class TestBase {
     }
 
     @BeforeMethod
-    public void setupMethod() {
+    @Parameters("env") //it means we agree for our codes to take orders from XML Runner
+    public void setupMethod(@Optional String env) {
+        System.out.println("env = " + env);
+        //ENV is null use default url, if ENV is not null get url based on ENV
+        if (env== null){
+            url = ConfigurationReader.get("url");
+        }else{
+            url = ConfigurationReader.get("url"+env);
+        }
+
         driver = Driver.get();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         url = ConfigurationReader.get("url");
