@@ -19,6 +19,7 @@ public class DataDrivenTestWithDataProvider {
 
     @Test(dataProvider = "testData")
     public void test1(String name, String rating){
+
         System.out.println("Movie" + name + "has rating"+ rating);
     }
 }
