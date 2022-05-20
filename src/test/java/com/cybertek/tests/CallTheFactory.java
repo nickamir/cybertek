@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class CallTheFactory {
     public static void main(String[] args) {
-
-        WebDriver driver = WebDriverfactory.getDriver("chrome");
+        WebDriver driver;
+         driver = WebDriverfactory.getDriver("chrome");
     }
 }

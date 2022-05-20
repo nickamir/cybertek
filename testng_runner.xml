@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Vytrack automation" verbose="1"> <!-- the higher  number of 'Verbose' the more specific info test gives -->
+    <test name="Vytrack smoke test">
+        <!--  Running all the tests inside thse packages-->
+        <packages>
+            <package name="com.cybertek.tests.d16_pom_p2"></package>
+            <package name="com.cybertek.tests.d17_extent_reports"></package>
+        </packages>
+
+        <!--Running this specific class inside Day17 -->
+        <classes>
+            <class name="com.cybertek.tests.d16_pom_p2.RepeatOptionsClassTest"></class>
+            <class name="com.cybertek.tests.d17_extent_reports.NegativeLoginTestWithReports">
+                <!--Running specific method from inside classes -->
+                <methods>
+                    <include name="wrongPasswordTest"/> <!-- "Includes that method from class " -->
+                    <exclude name="wrongUsernameTest"/> <!-- "Excludes that method from class " -->
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
